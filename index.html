@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ComponentHub - Interactive Vanilla JavaScript UI Design System including Modals, Accordions, Tabbed Panels, and Toast Notifications with full ARIA accessibility.">
+    <title>ComponentHub | Interactive UI Design System (Week 2)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Navigation Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="brand">
+                <span class="brand-icon">⚡</span>
+                <span class="brand-name">Component<span class="brand-highlight">Hub</span></span>
+            </div>
+            <span class="badge">Week 2 &bull; Interactive UI Components</span>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Title -->
+            <div class="hero-header text-center">
+                <h1>Interactive Vanilla JS UI Components</h1>
+                <p>Modular, responsive, and accessible UI component design system built with semantic HTML5, modern CSS, and pure Vanilla JavaScript.</p>
+            </div>
+
+            <!-- Component Grid Layout -->
+            <div class="component-grid">
+
+                <!-- COMPONENT 1: ACCESSIBLE MODAL SYSTEM -->
+                <section class="card component-card" id="modal-section">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <span class="component-num">01</span>
+                            <h2>Interactive Modal System</h2>
+                        </div>
+                        <span class="tech-pill">Dialog / Modal</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Accessible modal dialog featuring focus management, ARIA roles, backdrop blur, open/close animations, and keyboard Escape key listeners.</p>
+                        <div class="demo-actions">
+                            <button class="btn btn-primary" id="open-modal-btn">
+                                <span>🚀 Launch Demo Modal</span>
+                            </button>
+                            <button class="btn btn-outline" id="open-confirm-modal-btn">
+                                <span>⚠️ Launch Confirmation Modal</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- COMPONENT 2: RESPONSIVE ACCORDION SYSTEM -->
+                <section class="card component-card" id="accordion-section">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <span class="component-num">02</span>
+                            <h2>Animated Accordion System</h2>
+                        </div>
+                        <span class="tech-pill">Collapse / FAQ</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Expandable accordion panels with smooth CSS max-height transitions, `aria-expanded` synchronization, and Arrow key navigation support.</p>
+                        
+                        <div class="accordion" id="demo-accordion">
+                            <!-- Accordion Item 1 -->
+                            <div class="accordion-item">
+                                <button class="accordion-header" id="acc-head-1" aria-expanded="false" aria-controls="acc-panel-1">
+                                    <span>What layout techniques were used for these components?</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                                <div class="accordion-panel" id="acc-panel-1" aria-labelledby="acc-head-1" hidden>
+                                    <div class="accordion-content">
+                                        These UI components leverage modern CSS Grid and Flexbox for responsive alignment, CSS Custom Properties for theme management, and CSS transitions for micro-interactions.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Accordion Item 2 -->
+                            <div class="accordion-item">
+                                <button class="accordion-header" id="acc-head-2" aria-expanded="false" aria-controls="acc-panel-2">
+                                    <span>How is keyboard accessibility implemented?</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                                <div class="accordion-panel" id="acc-panel-2" aria-labelledby="acc-head-2" hidden>
+                                    <div class="accordion-content">
+                                        All interactive headers support Tab focus, Enter/Space activation, and Up/Down Arrow key navigation to switch focus between accordion headers cleanly.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Accordion Item 3 -->
+                            <div class="accordion-item">
+                                <button class="accordion-header" id="acc-head-3" aria-expanded="false" aria-controls="acc-panel-3">
+                                    <span>Is external library dependency required?</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                                <div class="accordion-panel" id="acc-panel-3" aria-labelledby="acc-head-3" hidden>
+                                    <div class="accordion-content">
+                                        Zero external libraries! Everything is built with lightweight vanilla JavaScript (ES6+), maximizing execution speed and eliminating security risks.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- COMPONENT 3: TABBED INTERFACE SYSTEM -->
+                <section class="card component-card" id="tabs-section">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <span class="component-num">03</span>
+                            <h2>Dynamic Tabbed Panel System</h2>
+                        </div>
+                        <span class="tech-pill">Tabs / Panels</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Tabbed interface component with animated active indicator, `role="tablist"` navigation, Left/Right arrow key switching, and instant panel swapping.</p>
+                        
+                        <div class="tabs-container" id="demo-tabs">
+                            <!-- Tab Header List -->
+                            <div class="tab-list" role="tablist" aria-label="Component Information Tabs">
+                                <button role="tab" aria-selected="true" aria-controls="panel-overview" id="tab-overview" tabindex="0" class="tab-btn active">
+                                    📊 Overview
+                                </button>
+                                <button role="tab" aria-selected="false" aria-controls="panel-analytics" id="tab-analytics" tabindex="-1" class="tab-btn">
+                                    📈 Analytics
+                                </button>
+                                <button role="tab" aria-selected="false" aria-controls="panel-settings" id="tab-settings" tabindex="-1" class="tab-btn">
+                                    ⚙️ Settings
+                                </button>
+                            </div>
+
+                            <!-- Tab Panels -->
+                            <div class="tab-panels">
+                                <div role="tabpanel" id="panel-overview" aria-labelledby="tab-overview" class="tab-panel active">
+                                    <h3>System Overview</h3>
+                                    <p>Interactive front-end components provide higher user retention, clear visual feedback, and intuitive content categorization.</p>
+                                </div>
+                                <div role="tabpanel" id="panel-analytics" aria-labelledby="tab-analytics" class="tab-panel" hidden>
+                                    <h3>Performance Metrics</h3>
+                                    <p>Components achieve 60fps animations with transform and opacity hardware acceleration, ensuring 0ms DOM bottlenecking.</p>
+                                </div>
+                                <div role="tabpanel" id="panel-settings" aria-labelledby="tab-settings" class="tab-panel" hidden>
+                                    <h3>Configuration Options</h3>
+                                    <p>Customize components easily using CSS Custom Properties (`:root`) or pass options directly to vanilla JavaScript constructor functions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- COMPONENT 4: TOAST NOTIFICATION MANAGER -->
+                <section class="card component-card" id="toast-section">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <span class="component-num">04</span>
+                            <h2>Toast Notification Manager</h2>
+                        </div>
+                        <span class="tech-pill">Toast / Feedback</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Dynamic toast notification system spawning auto-dismissing alerts with visual progress indicators and accessible `role="status"` live region support.</p>
+                        <div class="demo-actions">
+                            <button class="btn btn-success" id="toast-success-btn">Success Toast</button>
+                            <button class="btn btn-warning" id="toast-warning-btn">Warning Toast</button>
+                            <button class="btn btn-danger" id="toast-error-btn">Error Toast</button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL POPUP DIALOG (HIDDEN BY DEFAULT) -->
+    <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+        <div class="modal" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+            <div class="modal-header">
+                <h3 id="modal-title">Interactive Component Dialog</h3>
+                <button class="modal-close" id="modal-close-btn" aria-label="Close dialog">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-desc">
+                <p>This modal dialog enforces a focus trap, preventing keyboard focus from escaping into background DOM elements while open. Press <kbd>ESC</kbd> key or click outside to dismiss.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modal-cancel-btn">Close</button>
+                <button class="btn btn-primary" id="modal-action-btn">Understand & Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 ComponentHub | Developed for Week 2 Interactive UI Components Internship Task.</p>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
